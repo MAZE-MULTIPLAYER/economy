@@ -9,7 +9,6 @@ Bu dokümantasyon, RAGE-MP sunucusundaki tüm ana meslekler ve yan mesleklerin t
    - [Mechanic (Mekanik)](#mechanic-mekanik)
    - [Trucker (Tırci)](#trucker-tırci)
    - [Farmer (Çiftçi)](#farmer-çiftçi)
-   - [Arms Dealer (Silah Satıcısı)](#arms-dealer-silah-satıcısı)
    - [Fishing (Balıkçı)](#fishing-balıkçı)
    - [Cargo (Kargo)](#cargo-kargo)
    - [Chopshop (Araç Çalma)](#chopshop-araç-çalma)
@@ -164,38 +163,6 @@ Bu dokümantasyon, RAGE-MP sunucusundaki tüm ana meslekler ve yan mesleklerin t
 1. Location'u ekle
 2. Mesleğe katıl
 3. Çiftlik sistemi ile birlikte test et
-
----
-
-### Arms Dealer (Silah Satıcısı)
-
-**Sistem Açıklaması:**
-- Yasadışı meslek (level 6+ gerekli)
-- Silah crafting sistemi
-- Schematic ve material sistemi
-- Blackmarket entegrasyonu
-- Günlük limitler
-
-**Gerekli Materyaller:**
-- Gun/Ammo Schematic
-- Light/Heavy Material
-- Component
-
-**Test Komutları:**
-- `/buyparts` - Blackmarket'ten alışveriş
-
-**Location Parametreleri:**
-```
-/location add IllegalJob Arms Dealer
-/location add BlackmarketParts
-```
-
-**Test Senaryosu:**
-1. Location'ları ekle
-2. Level 6+ karakter
-3. Mesleğe katıl
-4. Blackmarket'ten malzeme al
-5. Silah crafting test et
 
 ---
 
@@ -583,7 +550,6 @@ Bazı location'lar alan (polygon) gerektirir:
 - [ ] Mechanic - Tamir sistemi, modifiye, component
 - [ ] Trucker - Görevler, kontratlar, dorse sistemi
 - [ ] Farmer - Mesleğe katılma
-- [ ] Arms Dealer - Blackmarket, crafting
 - [ ] Fishing - Balık tutma, minigame
 - [ ] Cargo - Koli alma/bırakma
 - [ ] Chopshop - Araç parçalama
@@ -613,7 +579,7 @@ Bazı location'lar alan (polygon) gerektirir:
 ## Notlar
 
 1. **Araç Ownership:** Sidejob araçları otomatik spawn olur, ana meslek araçları genellikle oyuncu satın alır
-2. **Level Gereksinimleri:** Arms Dealer ve Chopshop için minimum level 6 gerekli
+2. **Level Gereksinimleri:** Chopshop için minimum level 6 gerekli
 3. **Polis Gereksinimleri:** Chopshop için minimum polis sayısı gerekli
 4. **Envanter:** Eşya gerektiren meslekler için envanterde uygun eşyalar olmalı
 5. **Tutorial:** Tüm meslekler için tutorial bitirme şartı var
