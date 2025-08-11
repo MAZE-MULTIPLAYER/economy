@@ -38,8 +38,8 @@ Amaç: Duyuru veya reklam mesajını sunucuya iletmek ve iletişim numarasıyla 
   - `/reklam [yazı]` → Ücretsiz, anında yayına çıkar ve telefon listesine düşer.
 
 - Reklam Teklifi/Kabul (Sahada Weazel hizmeti için)
-  - `/offerads [oyuncu id] [fiyat] [yazı]` → Hedef oyuncuya ücretli reklam teklifi gönderir.
-  - Hedef oyuncu `/acceptads` yazarak öder ve reklam yayınlanır.
+  - `/reklamteklifi [oyuncu id] [fiyat] [yazı]` → Hedef oyuncuya ücretli reklam teklifi gönderir.
+  - Hedef oyuncu `/reklamkabul` yazarak öder ve reklam yayınlanır.
     - Ödeme: Nakit veya bankadan otomatik düşer.
     - Yayında mesajla beraber ad ve aktif telefon numarası görünür.
 
@@ -60,7 +60,6 @@ Belirli aralıklarla önceden planlanan sayıda reklamı otomatik yayınlar.
   - `/toplureklam [miktar] [aralık(dakika)] [yazı]`
     - Örnek: `/toplureklam 5 10 Açık artırma başlıyor!` → 10 dakikada bir, toplam 5 kez yayınlar.
   - `/reklamlistesi` → Aktif toplu reklamları listeler.
-  - `/removeads [id]` veya `/reklamsil [id]` → Seçilen toplu reklamı kaldırır.
 
 - Notlar
   - Toplu reklamlar veritabanında saklanır; kalan sayı ve süre otomatik takip edilir.
