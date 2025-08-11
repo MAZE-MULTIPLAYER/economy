@@ -42,6 +42,41 @@ Bu rehber, PayDay sırasında oyuncuların hesabına yatan tutarın hangi kaleml
 | Orta Elit Klasman | %8 |
 | En Üst Klasman | %10 |
 
+### Kademelere Giriş Eşikleri (Toplam Varlık Bazında)
+Aşağıdaki aralıklar “bekar” oyuncu ve ücretsiz destek dışı durum baz alınarak hesaplanmıştır. Formül: t = %1 + %0.1 × floor(Toplam Varlık / 1,000,000$), t üst sınırı %10’dur.
+
+| Kademe | Uygulanan Vergi Oranı | Toplam Varlık Aralığı (bekar) |
+|---|---:|---|
+| Düşük Klasman | < %2.00 | 0$ – 9,999,999.99$ |
+| Düşük Orta Klasman | ≥ %2.00 ve < %3.50 | 10,000,000.00$ – 24,999,999.99$ |
+| Orta Klasman | ≥ %3.50 ve < %5.00 | 25,000,000.00$ – 39,999,999.99$ |
+| Üst Orta Klasman | ≥ %5.00 ve < %6.50 | 40,000,000.00$ – 54,999,999.99$ |
+| Düşük Elit Klasman | ≥ %6.50 ve < %8.00 | 55,000,000.00$ – 69,999,999.99$ |
+| Orta Elit Klasman | ≥ %8.00 ve < %10.00 | 70,000,000.00$ – 89,999,999.99$ |
+| En Üst Klasman | ≥ %10.00 | 90,000,000.00$ ve üzeri |
+
+Notlar:
+- Evlilik indirimi (%10), vergi oranını düşürerek bir alt kademeye kaymanıza neden olabilir; fakat oran hiçbir zaman %1’in altına inmez.
+- Ücretsiz destek döneminde vergi normalde %0’dır; evli oyuncularda minimum %1 uygulanır, bu durumda kademeniz “Düşük Klasman” kalır.
+- Aralıklar sistem sabitlerine (INCOME_TAX_MIN/MAX, INC_RATE, INC_VALUE) bağlıdır; bu sabitler değiştirilirse tablo güncellenmelidir.
+
+### Vergi Sınıfları (taxClasses) ve Limitler
+Limit değerleri kodda cent cinsinden saklanır; aşağıdaki tabloda dolar karşılıkları verilmiştir.
+
+| Kademe | Limit ($) | Konut Vergisi | Araç Vergisi | Banka Faizi | Gelir Vergisi |
+|---|---:|---:|---:|---:|---:|
+| Düşük Klasman | 200,000.00$ | %0.04 | %0.08 | %1.00 | %0 |
+| Düşük Orta Klasman | 500,000.00$ | %0.08 | %0.12 | %0.85 | %2.00 |
+| Orta Klasman | 1,000,000.00$ | %0.12 | %0.15 | %0.70 | %3.50 |
+| Üst Orta Klasman | 2,500,000.00$ | %0.16 | %0.20 | %0.55 | %5.00 |
+| Düşük Elit Klasman | 5,000,000.00$ | %0.20 | %0.25 | %0.40 | %6.50 |
+| Orta Elit Klasman | 10,000,000.00$ | %0.25 | %0.30 | %0.25 | %8.00 |
+| En Üst Klasman | Sınır yok | %0.30 | %0.40 | %0.10 | %10.00 |
+
+Notlar:
+- “Limit”, o kademeye kadar olan üst varlık sınırını ifade eder; sınırı aşanlar bir üst kademeye geçer. Son kademede sınır yoktur.
+- Tablo, `taxClasses` yapılandırmasını yansıtır; bu değerler ekonomideki diğer hesaplamalarla birlikte yorumlanmalıdır.
+
 ### Senaryolar (dolar cinsinden)
 Not: Aşağıdaki örneklerde dolar cinsinden değerler verilmiştir ve iki ondalık basamakla gösterilmiştir.
 
